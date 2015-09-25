@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>随处记-餐费</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+		<style>
+			ul{margin: 0;}
+			.w50{width:100%;height:100%;font-size: 20px;}
+			.numList{list-style: none;padding:0;margin:10px 4px;}
+			.numList li{float:left;width:25%;}
+			.numList:after{clear:both;content:'';display: block;}
+			#muiicons2 .mui-icon{
+				width: 30px;
+				height: 30px;
+				margin: 3px 1px;
+				font-size: 24px;
+				line-height: 30px;
+				text-align: center;
+				background-color: #fff;
+				border: 1px solid #ddd;
+				border-radius: 50%;
+			}
+			#muiicons2 label,.floatLabel label{width:auto;padding-right: 5px;}
+			.floatLabel input{text-align: right;}
+			.mui-col-xs-p20{width:20%;}
+			#muiicons .mui-table-view-cell{padding:3px;}
+			#muiicons .mui-media-body{font-size: 12px;}
+			#totalValue{text-align: right;padding-right: 30px;}
+		</style>
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.plusReady(function(){
+			     //console.log("当前页面URL："+plus.webview.currentWebview().getURL());
+			});
+			
+			// H5 plus事件处理
+			function plusReady(){
+			}
+			if(window.plus){
+				plusReady();
+			}else{
+				document.addEventListener("plusready",plusReady,false);
+			}
+			// 选择日期
+			function pickDate(){
+				var d=new Date();
+				d.setFullYear(2015,9,8);
+				plus.nativeUI.pickDate( function(e){//H5调用原生
+					var d=e.date;
+					alert( "选择的日期："+d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate() );
+					document.getElementById("checkDate").value=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+				},function(e){
+					console.log( "未选择日期："+e.message );
+				},{date:d});
+			}
+		</script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		  <span class="mui-icon mui-icon-back"></span>
+		  <a class="mui-icon mui-icon-bars mui-pull-right"></a>
+		  <h1 class="mui-title">随处记</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row" id="muiicons2">
+					<span class="mui-icon mui-icon-home mui-pull-left"></span><label>餐费：</label>
+					<input type="text" id="totalValue" class="mui-input-clear" placeholder="带清除按钮的输入框" value="200">
+				</div>
+			</form>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>日期</label>
+					<input id="checkDate" type="text" onclick="pickDate()" placeholder="请选择日期">
+				</div>
+				<div class="mui-input-row">
+					<label>商家</label>
+					<input type="text" class="mui-input-clear" placeholder="XX位置">
+				</div>
+				<div class="mui-input-row">
+					
+						<div class="mui-pull-left mui-col-xs-6 floatLabel">
+							<label>人数</label>
+							<input type="text" class="mui-input-clear" placeholder="0">
+						</div>
+						<div class="mui-pull-left mui-col-xs-6 floatLabel">
+							<label>人均</label>
+							<input type="text" class="mui-input-clear" placeholder="0">
+						</div>
+					
+					
+				</div>
+				<div class="mui-input-row">
+					<label>费用归属</label>
+					<input type="text" class="mui-input-clear" placeholder="输入项目名称快速匹配">
+				</div>
+			</form>
+			<div class="mui-input-row" style="margin:5px 10px;">
+				<textarea rows="5" placeholder="说明"></textarea>
+			</div>
+			
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/yuantiao.jpg"></a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/shuijiao.jpg"></a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/muwu.jpg"></a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/cbd.jpg"></a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/yuantiao.jpg"></a>
+					</div>
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#"><img src="http://dcloudio.github.io/mui/assets/img/shuijiao.jpg"></a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<nav class="mui-bar mui-bar-tab">
+		  	<ul class="mui-pager">
+				<li>
+					<button class="mui-btn mui-btn-primary">完成</button>
+				</li>
+				<li>
+					<button class="mui-btn">再记一笔</button>
+				</li>
+			</ul>
+			
+		</nav>
+	</body>
+</html>

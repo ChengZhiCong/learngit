@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>随处记</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+		<style>
+			.w50{width:100%;height:100%;font-size: 20px;}
+			.numList{list-style: none;padding:0;margin:10px 4px;}
+			.numList li{float:left;width:25%;}
+			.numList:after{clear:both;content:'';display: block;}
+			#muiicons .mui-icon, #muiiconsInDevice .mui-icon {
+				width: 40px;
+				height: 40px;
+				margin: 3px 1px;
+				font-size: 24px;
+				line-height: 40px;
+				text-align: center;
+				background-color: #fff;
+				border: 1px solid #ddd;
+				border-radius: 50%;
+			}
+			.mui-col-xs-p20{width:20%;}
+			#muiicons .mui-table-view-cell{padding:3px;}
+			#muiicons .mui-media-body{font-size: 12px;}
+			#totalValue{text-align: right;padding-right: 30px;}
+		</style>
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.plusReady(function(){
+			     //console.log("当前页面URL："+plus.webview.currentWebview().getURL());
+			});
+		</script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		  <span class="mui-icon mui-icon-back"></span>
+		  <a class="mui-icon mui-icon-bars mui-pull-right"></a>
+		  <h1 class="mui-title">随处记</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>总金额：</label>
+					<input type="text" id="totalValue" class="mui-input-clear" placeholder="带清除按钮的输入框">
+				</div>
+			</form>
+			<div id="muiicons">
+				<ul class="mui-table-view mui-grid-view mui-grid-9">
+					<li class="mui-table-view-cell mui-media mui-col-xs-p20">
+						<a href="meals.html">
+							<span class="mui-icon mui-icon-home"></span>
+							<div class="mui-media-body">餐费</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-p20">
+						<a href="meals.html">
+							<span class="mui-icon mui-icon-image"></span>
+							<div class="mui-media-body">酒店</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-p20">
+						<a href="meals.html">
+							<span class="mui-icon mui-icon-home"></span>
+							<div class="mui-media-body">机票</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-p20">
+						<a href="meals.html">
+							<span class="mui-icon mui-icon-chat"></span>
+							<div class="mui-media-body">火车票</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-p20">
+						<a href="meals.html">
+							<span class="mui-icon mui-icon-home"></span>
+							<div class="mui-media-body">长途汽车</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-p20">
+						<a href="meals.html">
+							<span class="mui-icon mui-icon-map"></span>
+							<div class="mui-media-body">市内交通</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-p20">
+						<a href="meals.html">
+							<span class="mui-icon mui-icon-search"></span>
+							<div class="mui-media-body">自驾</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-p20">
+						<a href="meals.html">
+							<span class="mui-icon mui-icon-phone"></span>
+							<div class="mui-media-body">办公用品</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-p20">
+						<a href="meals.html">
+							<span class="mui-icon mui-icon-home"></span>
+							<div class="mui-media-body">租金</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-p20">
+						<a href="meals.html">
+							<span class="mui-icon mui-icon-more"></span>
+							<div class="mui-media-body">其他</div>
+						</a>
+					</li>
+					
+				</ul>
+				
+			</div>
+		</div>
+		
+		
+		<nav class="mui-bar mui-bar-tab">
+		  <ul class="numList">
+				<li><button class="mui-btn w50">1</button></li>
+			
+				<li><button class="mui-btn w50">2</button></li>
+			
+				<li><button class="mui-btn w50">3</button></li>
+			
+				<li><button class="mui-btn w50"><span class="mui-icon mui-icon-arrowthinleft"></span></button></li>
+			
+				<li><button class="mui-btn w50">4</button></li>
+			
+				<li><button class="mui-btn w50">5</button></li>
+			
+				<li><button class="mui-btn w50">6</button></li>
+			
+				<li><button class="mui-btn w50">+</button></li>
+			
+				<li><button class="mui-btn w50">7</button></li>
+			
+				<li><button class="mui-btn w50">8</button></li>
+			
+				<li><button class="mui-btn w50">9</button></li>
+			
+				<li><button class="mui-btn w50">-</button></li>
+			
+				<li><button class="mui-btn w50">c</button></li>
+			
+				<li><button class="mui-btn w50">0</button></li>
+			
+				<li><button class="mui-btn w50">.</button></li>
+			
+				<li><button class="mui-btn w50"><span class="mui-icon mui-icon-checkmarkempty"></span></button></li>
+			</ul>
+		</nav>
+			
+		
+	</body>
+</html>
